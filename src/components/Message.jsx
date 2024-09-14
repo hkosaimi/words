@@ -19,7 +19,7 @@ function Message() {
           initial={{ x: -500 }}
           animate={{ x: 0, transition: { duration: 1 } }}
           exit={{ x: -500, transition: { duration: 0.5 } }}
-          className="z-50  w-[400px] relative overflow-hidden drop-shadow-[0px_0px_10px_rgba(255,255,255,0.7)]">
+          className="z-50 my-10 lg:my-0  w-[400px] relative overflow-hidden drop-shadow-[0px_0px_10px_rgba(255,255,255,0.7)]">
           <div className="relative">
             <img src={vector} className="w-[250px]" alt="" />
           </div>
@@ -30,7 +30,7 @@ function Message() {
             </Link>
             <button
               onClick={(e) => setShow(!show)}
-              className="absolute bg-zinc-100 px-[4px] rounded-full top-0 right-1">
+              className="absolute hidden lg:block bg-zinc-100 px-[4px] rounded-full top-0 right-1">
               X
             </button>
           </motion.div>
