@@ -48,24 +48,24 @@ function Header() {
         <Link
           to="/"
           className={clsx(
-            "text-white/70",
-            pathname === "/" && " text-white border-b-4 border-red-500"
+            pathname === "/" && "text-white border-b-4 border-red-500",
+            "text-white/70"
           )}>
           Home
         </Link>
         <Link
           to="/about"
           className={clsx(
-            "text-white/70",
-            pathname === "/about" && "text-white border-b-4 border-red-500"
+            pathname === "/about" && "text-white border-b-4 border-red-500",
+            "text-white/70"
           )}>
           About
         </Link>
         <Link
           to="/contact"
           className={clsx(
-            "text-white/70",
-            pathname === "/contact" && "text-white border-b-4 border-red-500"
+            pathname === "/contact" && "text-white border-b-4 border-red-500",
+            "text-white/70"
           )}>
           Contact
         </Link>
