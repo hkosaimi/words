@@ -11,7 +11,7 @@ function Home() {
   const [loading, setLoading] = useState(false);
 
   const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
-  console.log(data);
+  /*   console.log(data[0].meanings[0].definitions[0].definition); */
   const handleSubmit = async () => {
     if (!inputWord) {
       return toast.error("Please enter a word");
@@ -62,6 +62,8 @@ function Home() {
       x: 0,
     },
   };
+  const definition = data && data[0].meanings[0].definitions[0].definition;
+
   return (
     <>
       {loading && (
@@ -81,19 +83,17 @@ function Home() {
               />
             </div>
             <div>
-              {Array.isArray(data) &&
-                data?.map((word, index) => (
+              {Array.isArray(data) && (
+                <div className="flex justify-center items-center  mt-20 flex-col px-5 text-2xl ">
                   <motion.div
-                    key={index}
-                    initial="hidden"
-                    animate="visible"
-                    variants={parent}
-                    className="flex justify-center items-center  mt-20 flex-col px-5 text-2xl ">
-                    <div className="text-center w-1/2 flex justify-center items-center">
-                      {word?.meanings[0].definitions[0].definition}
-                    </div>
+                    key={definition}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1, transition: { duration: 1 } }}
+                    className="text-center lg:w-1/2 flex justify-center items-center">
+                    {definition}
                   </motion.div>
-                ))}
+                </div>
+              )}
             </div>
             {!Array.isArray(data) && (
               <div className="flex mt-20 flex-col text-2xl">

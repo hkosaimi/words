@@ -31,8 +31,8 @@ function Header() {
     },
   };
   return (
-    <div className="flex  justify-around py-5 text-md lg:text-2xl">
-      <div className=" lg:w-2/3 text-center ">
+    <div className="flex  justify-around py-5 text-lg lg:text-2xl">
+      <div className="  text-center ">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -44,7 +44,7 @@ function Header() {
           ))}
         </motion.div>
       </div>
-      <div className="flex  w-2/3 gap-5 lg:gap-10 ">
+      <div className="flex  gap-5 lg:gap-10 ">
         <Link to="/" className={clsx(pathname === "/" && " border-b-4 border-red-500")}>
           Home
         </Link>
