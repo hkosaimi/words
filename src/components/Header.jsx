@@ -45,15 +45,28 @@ function Header() {
         </motion.div>
       </div>
       <div className="flex  gap-5 lg:gap-10 ">
-        <Link to="/" className={clsx(pathname === "/" && " border-b-4 border-red-500")}>
+        <Link
+          to="/"
+          className={clsx(
+            "text-white/70",
+            pathname === "/" && " text-white border-b-4 border-red-500"
+          )}>
           Home
         </Link>
-        <Link to="/about" className={clsx(pathname === "/about" && " border-b-4 border-red-500")}>
+        <Link
+          to="/about"
+          className={clsx(
+            "text-white/70",
+            pathname === "/about" && "text-white border-b-4 border-red-500"
+          )}>
           About
         </Link>
         <Link
           to="/contact"
-          className={clsx(pathname === "/contact" && " border-b-4 border-red-500")}>
+          className={clsx(
+            "text-white/70",
+            pathname === "/contact" && "text-white border-b-4 border-red-500"
+          )}>
           Contact
         </Link>
       </div>

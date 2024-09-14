@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 function WordSample() {
   return (
-    <div className="flex mb-5 lg:mb-0 px-5 flex-col overflow-hidden lg:flex-row lg:fixed bottom-0 lg:items-end gap-10 lg:gap-5 w-full mt-20 lg:px-10">
+    <div className="flex mb-5 lg:mb-0 px-5 flex-col overflow-hidden lg:flex-row lg:fixed bottom-0 lg:items-end gap-10 lg:gap-5 w-full  lg:px-10">
       <motion.div
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}

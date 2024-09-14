@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Layout from "../Layout";
 import { toast } from "react-toastify";
 import { motion } from "framer-motion";
-import { WordSample } from "../components/index";
+import { WordSample, Loader } from "../components/index";
 
 function Home() {
   const [data, setData] = useState();
@@ -62,13 +62,10 @@ function Home() {
       x: 0,
     },
   };
-  const definition = data && data[0].meanings[0].definitions[0].definition;
+  const definition = data && Array.isArray(data) && data[0].meanings[0].definitions[0].definition;
 
   return (
     <>
-      {loading && (
-        <div className="size-20 bg-rose-500 absolute top-1/2 left-1/2 animate-spin "></div>
-      )}
       <Layout>
         <div className="">
           <div onMouseMove={(e) => mouse(e)} className="container mx-auto text-center mt-28 ">
@@ -83,16 +80,20 @@ function Home() {
               />
             </div>
             <div>
-              {Array.isArray(data) && (
-                <div className="flex justify-center items-center  mt-20 flex-col px-5 text-2xl ">
-                  <motion.div
-                    key={definition}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1, transition: { duration: 1 } }}
-                    className="text-center lg:w-1/2 flex justify-center items-center">
-                    {definition}
-                  </motion.div>
-                </div>
+              {loading ? (
+                <Loader />
+              ) : (
+                Array.isArray(data) && (
+                  <div className="flex justify-center items-center  mt-20 flex-col px-5 text-2xl ">
+                    <motion.div
+                      key={definition}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1, transition: { duration: 1 } }}
+                      className="text-center lg:w-1/2 mb-10 flex justify-center items-center">
+                      {definition}
+                    </motion.div>
+                  </div>
+                )
               )}
             </div>
             {!Array.isArray(data) && (
