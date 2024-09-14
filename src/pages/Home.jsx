@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Layout from "../Layout";
 import { toast } from "react-toastify";
 import { motion } from "framer-motion";
-import { WordSample, Loader } from "../components/index";
+import { WordSample, Loader, Message } from "../components/index";
 
 function Home() {
   const [data, setData] = useState();
@@ -42,12 +42,14 @@ function Home() {
   const parent = {
     hidden: {
       opacity: 0,
+      scale: 0.5,
     },
     visible: {
       opacity: 1,
+      scale: 1,
       transition: {
-        duration: 0.5,
-        staggerChildren: 0.3,
+        duration: 1,
+        staggerChildren: 0.04,
       },
     },
   };
@@ -55,15 +57,18 @@ function Home() {
   const child = {
     hidden: {
       opacity: 0,
-      x: -100,
     },
     visible: {
       opacity: 1,
-      x: 0,
+      transition: {
+        duration: 0.5,
+      },
     },
   };
   const definition = data && Array.isArray(data) && data[0].meanings[0].definitions[0].definition;
 
+  const arr = definition?.split("");
+  console.log(arr);
   return (
     <>
       <Layout>
@@ -84,15 +89,17 @@ function Home() {
                 <Loader />
               ) : (
                 Array.isArray(data) && (
-                  <div className="flex justify-center items-center  mt-20 flex-col px-5 text-2xl ">
-                    <motion.div
-                      key={definition}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1, transition: { duration: 1 } }}
-                      className="text-center lg:w-1/2 mb-10 flex justify-center items-center">
-                      {definition}
-                    </motion.div>
-                  </div>
+                  <motion.div
+                    variants={parent}
+                    initial="hidden"
+                    animate="visible"
+                    className="mt-20  px-5 text-2xl ">
+                    {arr.map((letter) => (
+                      <motion.span key={letter} variants={child} className="">
+                        {letter}
+                      </motion.span>
+                    ))}
+                  </motion.div>
                 )
               )}
             </div>
@@ -104,6 +111,7 @@ function Home() {
             )}
           </div>
           <WordSample />
+          <Message />
         </div>
       </Layout>
     </>
