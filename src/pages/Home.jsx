@@ -48,7 +48,7 @@ function Home() {
       opacity: 1,
       scale: 1,
       transition: {
-        duration: 1,
+        duration: 0.5,
         staggerChildren: 0.04,
       },
     },
@@ -79,7 +79,7 @@ function Home() {
                 value={inputWord}
                 onChange={(e) => setInputWord(e.target.value)}
                 type="text"
-                placeholder="Enter any word"
+                placeholder="Enter a word get a definition"
                 className="px-10 py-5 text-xl rounded-full w-full lg:w-1/2 text-black outline-0  shadow-[0px_0px_5px_rgb(255,255,255)] focus:shadow-[0px_0px_15px_rgb(255,255,255)]"
                 onKeyDown={handleKeyDown}
               />
@@ -93,9 +93,9 @@ function Home() {
                     variants={parent}
                     initial="hidden"
                     animate="visible"
-                    className="mt-20  px-5 text-2xl ">
+                    className="mt-10  lg:px-56  z-50 text-2xl">
                     {arr.map((letter) => (
-                      <motion.span key={letter} variants={child} className="">
+                      <motion.span key={letter} variants={child}>
                         {letter}
                       </motion.span>
                     ))}

@@ -8,7 +8,7 @@ function WordSample() {
       <motion.div
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
-        className="lg:w-[30%] relative  h-[500px] rounded-2xl">
+        className="lg:w-[30%] relative  h-[300px] rounded-2xl">
         <img src={car} alt="car" className="object-cover w-full h-full rounded-2xl" />
         <div className="absolute flex flex-col justify-center gap-5 inset-0 bg-black/50 rounded-2xl p-10">
           <h1 className="text-3xl font-bold">Car</h1>
@@ -21,7 +21,7 @@ function WordSample() {
       <motion.div
         initial={{ opacity: 0, x: 100 }}
         whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
-        className=" lg:w-[20%] relative h-[300px] bg-sky-500 rounded-lg">
+        className=" lg:w-[20%] relative h-[200px] bg-sky-500 rounded-lg">
         <img src={cinema} alt="car" className="object-cover rounded-lg w-full h-full" />
         <div className="absolute rounded-lg inset-0 bg-black/50 flex flex-col justify-center gap-5 px-10 ">
           <h1 className="text-3xl font-bold">Cinema</h1>
@@ -31,7 +31,7 @@ function WordSample() {
       <motion.div
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
-        className="lg:w-[20%] relative h-[300px] bg-sky-500">
+        className="lg:w-[20%] relative h-[200px] bg-sky-500">
         <img src={cosmology} alt="car" className="object-cover w-full h-full" />
         <div className="absolute inset-0 bg-black/50 flex flex-col justify-center gap-5 px-10 ">
           <h1 className="text-3xl font-bold">Cosmology</h1>
@@ -44,7 +44,7 @@ function WordSample() {
       <motion.div
         initial={{ opacity: 0, x: 100 }}
         whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
-        className="  lg:w-[30%] relative  h-[500px] ">
+        className="  lg:w-[30%] relative  h-[300px] ">
         <img src={music} alt="car" className="object-cover  w-full h-full" />
         <div className="absolute inset-0  bg-black/50 flex flex-col justify-center gap-5 px-10">
           <h1 className="text-3xl font-bold">Music</h1>
